@@ -117,3 +117,15 @@ The following table includes the performance between the standard PPO and baseli
 ## Example snapshots of agent performances
 Comparing the Social-friendly and risk-aware RL agent with the baseline RL and IDM/MOBIL in roundabout scenario: The IDM/MOBIL leads to a collision, while the baseline RL agent leads to over-conservative behavior
 ![Result](assests/roundabout_snapshot.jpg)
+
+## RL implementation in Metadrive configurations:
+train the RL with selected scenarios and RL algorithms:
+```
+python rl/train_metadrive_sb3.py --protocol matched_social_risk_straight --algo ppo --steps 1000000 --n-envs 4 --run-name matched_social_risk_straight_ppo_1m --device cuda
+```
+
+evaluate the performance in 3D view (change to "--view top_down" if want BEV view)
+```
+python rl/watch_metadrive_agent.py --planner rl --protocol matched_social_risk_straight --checkpoint rl/checkpoints/metadrive/matched_social_risk_straight_ppo_1m/final.zip --view 3d --episodes 3 --seed 10000 --density 0.3
+```
+
