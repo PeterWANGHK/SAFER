@@ -185,6 +185,7 @@ CUDA is optional:
 ```powershell
 python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_respawn --algo ppo --steps 1000000 --n-envs 4 --reward-profile risk_only --run-name matched_social_risk_intersection_respawn_ppo_1m_cuda --device cuda
 ```
+#### Example simulation of the training trial and error for the social and risk-aware PPO agent case:
 
 ![PPO_examples](assests/ppo_trial.gif)
 
