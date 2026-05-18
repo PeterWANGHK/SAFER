@@ -135,7 +135,7 @@ reward with almost zero route completion.
 
 ### Training Commands
 
-### Official MetaDrive Notebook Reference
+#### Official MetaDrive Notebook Reference
 
 This reproduces the tutorial-style PPO sanity check. It is not the main fair
 benchmark.
