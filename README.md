@@ -279,22 +279,6 @@ python rl/watch_metadrive_agent.py --planner rl --algo ppo `
   --view top_down --episodes 3 --seed 10000 --density 0.3
 ```
 
-Diagnostic workaround for static trigger traffic in an old checkpoint:
-
-```powershell
-python rl/watch_metadrive_agent.py --planner rl --algo ppo `
-  --protocol matched_social_risk_intersection `
-  --checkpoint rl/checkpoints/metadrive/matched_social_risk_intersection_ppo_1m/final.zip `
-  --traffic-mode respawn --view 3d --episodes 3 --seed 10000 --density 0.3
-```
-
-IDM in the same moving-traffic scenario:
-
-```powershell
-python rl/watch_metadrive_agent.py --planner idm `
-  --protocol matched_stock_intersection_respawn `
-  --view 3d --episodes 3 --seed 10000 --density 0.3
-```
 
 #### BEV Risk-Field Overlay
 
