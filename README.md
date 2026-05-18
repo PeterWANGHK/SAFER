@@ -26,6 +26,8 @@ python run_track_visualization.py --dataset [name of the dataset (e.g., highD; S
 # Example: load the behaviors from the SQM-N-4 dataset and store into .npz file 
 python -m rl.data.historical_extractor --dataset SQM-N-4 --data-dir data/SQM-N-4   --out-path rl/checkpoints/bc_sqm_v3.npz
 ```
+
+## Set1: HighwayEnv Configurations
 ### RL training and evaluation in heterogeneous traffic (PPO only)
 ```
 # 1. Extract ALL recordings into one dataset
@@ -77,12 +79,12 @@ python highway\_test.py \\
   --steps 400 --save-dir figsave\_test\_v3\_rl
 ```
 
-## Datasets used in this project (download links):
+### Datasets used in this project (download links):
 [Ubiquitous Traffic Eyes](http://www.seutraffic.com/#/download)
 
 [leveLXData](https://levelxdata.com/)
 
-## Example statistical results:
+### Example statistical results:
 The following table includes the performance between the standard PPO and baseline IDM/MOBIL model:
 
 | metric | better | stock-ppo | IDM/MOBIL |
@@ -114,12 +116,12 @@ The following table includes the performance between the standard PPO and baseli
 | Courtesy Score | higher | 1.000 | 1.000 |
 | Social-Friendliness Score | higher | 0.608 | 0.421 |
 
-## Example snapshots of agent performances
+### Example snapshots of agent performances
 Comparing the Social-friendly and risk-aware RL agent with the baseline RL and IDM/MOBIL in roundabout scenario: The IDM/MOBIL leads to a collision, while the baseline RL agent leads to over-conservative behavior
 ![Result](assests/roundabout_snapshot.jpg)
 
 
-### MetaDrive Training Commands
+## Set2: MetaDrive Configurations
 
 ### Algorithm Compatibility
 
