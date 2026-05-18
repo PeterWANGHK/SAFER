@@ -91,6 +91,7 @@ Comparing the Social-friendly and risk-aware RL agent with the baseline RL and I
 
 
 ## Set2: MetaDrive Configurations
+(The environment configurations are forked from [MetaDrive](https://github.com/metadriverse/metadrive.git))
 
 ### Algorithm Compatibility
 
