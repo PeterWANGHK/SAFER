@@ -118,47 +118,10 @@ The following table includes the performance between the standard PPO and baseli
 Comparing the Social-friendly and risk-aware RL agent with the baseline RL and IDM/MOBIL in roundabout scenario: The IDM/MOBIL leads to a collision, while the baseline RL agent leads to over-conservative behavior
 ![Result](assests/roundabout_snapshot.jpg)
 
-# MetaDrive RL Training, Evaluation, and Visualization Commands
 
-This file is the command reference for the MetaDrive family of experiments in
-`rl/`. It separates protocol-consistent paper runs from diagnostic visualization
-overrides.
+### MetaDrive Training Commands
 
-## Why Traffic Can Look Static
-
-MetaDrive's default benchmark traffic mode is `trigger`. In trigger mode, traffic
-vehicles are staged and activated only when the ego vehicle reaches the trigger
-road. This can look static in short or conservative rollouts, especially on
-`map="S"` straight-road specialists and some intersection seeds. It is not a
-checkpoint-loading bug.
-
-Use one of these fixes:
-
-- For paper experiments with moving traffic, train and evaluate the explicit
-  `*_respawn` protocols, for example `matched_social_risk_intersection_respawn`.
-- For visual diagnosis of an old trigger-trained checkpoint, pass
-  `--traffic-mode respawn` to the watch/eval/visualization scripts. Label this as
-  a viewer/stress-test override unless the checkpoint was trained with respawn
-  traffic.
-
-Do not replace old checkpoint folders. Use new run names.
-
-## Scenario Protocols
-
-| Scenario | Map code | Trigger stock/risk | Moving stock/risk |
-|---|---:|---|---|
-| Straight | `S` | `matched_stock_straight`, `matched_social_risk_straight` | `matched_stock_straight_respawn`, `matched_social_risk_straight_respawn` |
-| Curve | `C` | `matched_stock_curve`, `matched_social_risk_curve` | `matched_stock_curve_respawn`, `matched_social_risk_curve_respawn` |
-| Merge | `r` | `matched_stock_merge`, `matched_social_risk_merge` | `matched_stock_merge_respawn`, `matched_social_risk_merge_respawn` |
-| Intersection | `X` | `matched_stock_intersection`, `matched_social_risk_intersection` | `matched_stock_intersection_respawn`, `matched_social_risk_intersection_respawn` |
-| Roundabout | `O` | `matched_stock_roundabout`, `matched_social_risk_roundabout` | `matched_stock_roundabout_respawn`, `matched_social_risk_roundabout_respawn` |
-| Mixed | `SCrXO` | `matched_stock_mixed`, `matched_social_risk_mixed` | `matched_stock_mixed_respawn`, `matched_social_risk_mixed_respawn` |
-
-Continuous-action counterparts append `_continuous` to trigger protocols and
-`_respawn_continuous` to moving-traffic protocols. Use these for SAC, TD3, and
-DDPG.
-
-## Algorithm Compatibility
+#### Algorithm Compatibility
 
 | Algorithm | SB3 action space | Use these protocols |
 |---|---|---|
@@ -172,9 +135,7 @@ Stock protocols use MetaDrive's default observation and reward. Social-risk
 protocols append the 8-D DRIFT risk feature vector, apply risk/comfort reward
 shaping, and compute risk exposure metrics.
 
-## MetaDrive Training Commands
-### PPO Specialist Runs With Moving Traffic
-
+#### PPO Specialist Runs With Moving Traffic
 Straight:
 
 ```powershell
@@ -216,7 +177,7 @@ CUDA-enabled:
 python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_respawn --algo ppo --steps 1000000 --n-envs 4 --run-name matched_social_risk_intersection_respawn_ppo_1m_cuda --device cuda
 ```
 
-### DQN Baselines
+#### DQN Baselines
 
 DQN uses the same discrete protocols as PPO:
 
@@ -225,7 +186,7 @@ python rl/train_metadrive_sb3.py --protocol matched_stock_intersection_respawn -
 python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_respawn --algo dqn --steps 1000000 --n-envs 4 --run-name matched_social_risk_intersection_respawn_dqn_1m
 ```
 
-### SAC, TD3, and DDPG Baselines
+#### SAC, TD3, and DDPG Baselines
 
 Use continuous-action protocols:
 
@@ -240,7 +201,7 @@ python rl/train_metadrive_sb3.py --protocol matched_stock_intersection_respawn_c
 python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_respawn_continuous --algo ddpg --steps 1000000 --n-envs 4 --run-name matched_social_risk_intersection_respawn_ddpg_1m
 ```
 
-## Evaluation Commands
+#### Evaluation Commands
 
 Planner specs use:
 
@@ -278,7 +239,7 @@ python rl/eval_metadrive.py --run-name eval_trigger_checkpoint_respawn_stress `
   --planners "risk_ppo@matched_social_risk_intersection:rl/checkpoints/metadrive/matched_social_risk_intersection_ppo_1m/final.zip,idm@matched_stock_intersection"
 ```
 
-## 3D and Top-Down Watching
+#### 3D and Top-Down Watching
 
 3D Panda3D view:
 
@@ -315,7 +276,7 @@ python rl/watch_metadrive_agent.py --planner idm `
   --view 3d --episodes 3 --seed 10000 --density 0.3
 ```
 
-## BEV Risk-Field Overlay
+#### BEV Risk-Field Overlay
 
 Side-by-side top-down risk overlay:
 
