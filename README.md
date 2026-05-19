@@ -3,6 +3,8 @@
 
 A physics-informed propagated risk field can serve as a structured intermediate representation that improves RL tactical planning by making safety, progress, and externality measurable and learnable.
 
+Unlike prior risk-aware RL methods that use instantaneous scalar risk penalties, this model learns a differentiable PDE-governed risk field and explicitly maps the field to surrounding-vehicle exposure and social externality. This allows risk to influence both the policy observation and the reward hierarchy.
+
 Preliminmary model for PDE-governed risk field propagation modeling used could be found at [DRIFT](https://github.com/PeterWANGHK/DRIFT.git)
 
 ![Methodology graph](assests/methodology_8007.jpg)
