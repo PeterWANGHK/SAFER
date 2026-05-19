@@ -5,6 +5,10 @@ Preliminmary model for PDE-governed risk field propagation modeling used could b
 
 ![Methodology graph](assests/methodology_8007.jpg)
 
+- Problem: socially friendly autonomous driving needs safety, progress, and low externality.
+- Gap: risk-aware RL often uses scalar or instantaneous risk and lacks physically grounded risk propagation.
+- Solution: PINN-learned PDE risk field embedded into tactical RL and MPC--CBF execution.
+- Contributions: PDE/PINN field surrogate, externality-aware social score, risk-guided RL policy, closed-loop validation.
 
 ### PINN training
 ```
