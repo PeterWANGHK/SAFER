@@ -1,5 +1,5 @@
 
-# PINN-Guided Risk-Field Reinforcement Learning for Externality-Aware Autonomous Driving
+# Physics-Informed Risk Propagation and Reinforcement Learning for Socially Compatible Autonomous Driving
 
 A physics-informed propagated risk field can serve as a structured intermediate representation that improves RL tactical planning by making safety, progress, and externality measurable and learnable.
 
