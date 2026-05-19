@@ -256,3 +256,26 @@ python rl/visualize_metadrive_comparison.py `
   --out rl/logs/metadrive/viz/intersection_respawn_overlay.png
 ```
 
+#### Training Reward/Return Plots
+
+Use the unified plotter when comparing training curves across MetaDrive and
+HighwayEnv. It normalizes local logs into `timesteps`, average reward, and
+episode return:
+
+```powershell
+python rl/plot_rl_training_reward_return.py `
+  --runs "MetaDrive Stock PPO=rl/logs/metadrive/matched_stock_ppo/progress.csv" `
+         "MetaDrive Risk DQN=rl/logs/metadrive/matched_social_risk_intersection_respawn_dqn_1m/progress.csv" `
+         "HighwayEnv Social PPO=rl/logs/social_ppo_a5/summary.json" `
+  --out rl/logs/figures/training_reward_return
+```
+
+Outputs:
+
+- `training_reward_return.png`
+- `training_reward_return.pdf`
+- `training_reward_return_data.csv`
+
+
+### License
+MIT LICENSE
