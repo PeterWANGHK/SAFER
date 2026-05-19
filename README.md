@@ -164,7 +164,7 @@ CUDA is optional:
 ```powershell
 python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_respawn --algo ppo --steps 1000000 --n-envs 4 --reward-profile risk_only --run-name matched_social_risk_intersection_respawn_ppo_1m_cuda --device cuda
 ```
-#### Example simulation of the training trial and error for the social and risk-aware PPO agent case:
+#### Example simulation of the training trial and error for the social and risk-aware PPO agent in curvy road scenarios:
 
 ![PPO_examples](assests/ppo_trial.gif)
 
@@ -191,6 +191,9 @@ python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_res
 python rl/train_metadrive_sb3.py --protocol matched_stock_intersection_respawn_continuous --algo ddpg --steps 1000000 --n-envs 4 --run-name matched_stock_intersection_respawn_ddpg_1m
 python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_respawn_continuous --algo ddpg --steps 1000000 --n-envs 4 --run-name matched_social_risk_intersection_respawn_ddpg_1m
 ```
+
+#### Example simulation of the training trial and error for baseline TD3 agent in unsignalized intersection scenarios (with some randomly initialized traffic):
+![TD3_examples](assests/stock_td3_intersection.gif)
 
 #### Evaluation Commands
 
