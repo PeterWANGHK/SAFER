@@ -192,9 +192,12 @@ python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_res
 
 #### Example simulation of the training trial and error for baseline TD3, DDPG agent in unsignalized intersection scenarios (with some randomly initialized traffic):
 ![TD3_examples](assests/stock_td3_intersection.gif)
-![TD3_examples](assests/stock_ddpg_intersection.gif)
+![DDPG_examples](assests/stock_ddpg_intersection.gif)
 
-Some questions could be found from the baseline RL agent: 
+#### Example simulation of the training trial and error for baseline PPO agent in rounabout scenarios (with some randomly initialized traffic):
+![PPO_examples](assests/stock_ppo_intersection.gif)
+
+Some problems could be found from the baseline RL agent: 
 - high steering magnitude;
 - high steering-change rate;
 - high throttle-change rate;
