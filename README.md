@@ -195,7 +195,7 @@ python rl/train_metadrive_sb3.py --protocol matched_social_risk_intersection_res
 ![DDPG_examples](assests/stock_ddpg_intersection.gif)
 
 #### Example simulation of the training trial and error for baseline PPO agent in rounabout scenarios (with some randomly initialized traffic):
-![PPO_examples](assests/stock_ppo_intersection.gif)
+![PPO_examples](assests/stock_roundabout_ppo.gif)
 
 Some problems could be found from the baseline RL agent: 
 - high steering magnitude;
