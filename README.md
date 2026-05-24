@@ -267,6 +267,8 @@ python rl/watch_metadrive_agent.py --planner rl --algo ppo `
 #### Example simulation of DDPG agent in roundabout scenarios:
 ![DDPG_examples](assests/ddpg_roundabout.gif)
 
+#### Example simulations of SAC agents in roundabout scenarios (from left to right: baseline SAC; risk-aware SAC (w/o social); social-risk SAC (our proposed full model)):
+![SAC_parallel_examples](assests/intersection_sac_parallel.gif)
 
 #### BEV Risk-Field Overlay
 
