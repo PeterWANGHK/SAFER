@@ -252,31 +252,4 @@ Example proposed and baseline policy rollouts:
 
 ![SAC_parallel_examples](assests/intersection_sac_parallel.gif)
 
-## Plotting
 
-Training curves and evaluation figures can be generated from saved logs.
-
-```bash
-python rl/plot_rl_training_reward_return.py \
-  --runs "MetaDrive Stock PPO=rl/logs/metadrive/matched_stock_ppo/progress.csv" \
-         "HighwayEnv Social PPO=rl/logs/social_ppo_a5/summary.json" \
-  --out rl/logs/figures/training_reward_return
-```
-
-Paper-style evaluation figures are generated with:
-
-```bash
-python rl/plot_paper_evaluation_figures.py \
-  --highway-suite-dirs rl/logs/highwayenv_sb3_suite_highway/highway_v0_medium \
-  --metadrive-eval-dirs rl/logs/metadrive/eval_merge_3arm_full \
-  --out-dir rl/logs/paper_eval_figures
-```
-
-## Repository Notes
-
-This repository is currently organized as a research release.  
-Demonstration scripts, trained examples, and visualization utilities are available first. A cleaned full-code release, complete checkpoints, and paper preprint will be released after internal validation.
-
-## License
-
-MIT License.
