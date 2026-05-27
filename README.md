@@ -1,4 +1,4 @@
-# SAFER: Socially-Aware Field-Enhanced Reinforcement Learning for Autonomous Driving
+# SAFE-AD: Socially-Aware Field-Enhanced Reinforcement Learning for Autonomous Driving
 
 ![Code Status](https://img.shields.io/badge/code-partial_release-orange)
 ![Demos](https://img.shields.io/badge/demonstrations-ready-brightgreen)
@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 
-SAFER is a research prototype for **socially-aware and risk-aware reinforcement learning in interactive autonomous driving**.  
+SAFE-AD is a research prototype for **socially-aware and risk-aware reinforcement learning in interactive autonomous driving**.  
 The central idea is to use a **physics-informed propagated risk field** as a structured intermediate representation for RL tactical planning. Instead of penalizing only instantaneous scalar risk, SAFER models how risk propagates through traffic and maps this field to ego safety, surrounding-vehicle exposure, and social externality.
 
 The preliminary PDE-governed risk-field model is based on [DRIFT](https://github.com/PeterWANGHK/DRIFT.git).
